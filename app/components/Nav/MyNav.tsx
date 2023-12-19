@@ -7,10 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
+  { name: "Dashboard", href: "#", current: false },
   { name: "Team", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
+  { name: "Examples", href: "#", current: true },
 ];
 
 function classNames(...classes: string[]) {
@@ -19,7 +20,8 @@ function classNames(...classes: string[]) {
 
 export default function MyNav() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    // Navbar Container
+    <Disclosure as="nav" className="bg-teal-900">
       {({ open }) => (
         <>
           {/* Main Container */}
@@ -43,10 +45,12 @@ export default function MyNav() {
                 {/* Logo Inner Container */}
                 <div className="flex flex-shrink-0 items-center">
                   {/* Icon Image */}
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  <Image
+                    className="h-8 w-8 rounded-full"
+                    src="/logo-hero.png"
                     alt="Your Company"
+                    width={50}
+                    height={50}
                   />
                 </div>
                 {/* Navbar Items Container */}
@@ -75,7 +79,7 @@ export default function MyNav() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="relative rounded-full bg-red-00 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
@@ -88,10 +92,12 @@ export default function MyNav() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       {/* Profile Image Icon */}
-                      <img
+                      <Image
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        src="/profile-hero.png"
+                        alt="Profile Image"
+                        width={50}
+                        height={50}
                       />
                     </Menu.Button>
                   </div>

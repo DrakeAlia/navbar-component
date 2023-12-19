@@ -19,6 +19,7 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
   return (
+    // Navbar Container
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
